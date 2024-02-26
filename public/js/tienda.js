@@ -1,65 +1,46 @@
-import {Agricola} from './agricola.js'
-import {Deportivo} from './deportivo.js'
-import {Muebles} from './muebles.js'
+import { Ropa } from "./ropa.js";
+import { Hogar } from "./hogar.js";
+import { Smartphone } from "./smartphone.js";
+const productos = [
+    new Ropa("Chaqueta", 30, "M"),
+    new Ropa("Pantalón", 40, "L"),
+    new Ropa("Camiseta", 20, "S"),
+    new Ropa("Jersey", 50, "XL"),
+    new Ropa("Vestido", 60, "M"),
+    new Ropa("Falda", 45, "S"),
+    new Ropa("Calcetines", 5, "M"),
+    new Ropa("Zapatos", 80, "L"),
+    new Hogar("Lámpara", 50, "Habitación"),
+    new Hogar("Mesa", 460, "Cocina"),
+    new Smartphone("IPhone 15 pro Max", 1499, "Apple"),
+    new Smartphone("One Plus Nord 3 CE Lite", 235, "One Plus"),
+    new Smartphone("Samsung Galaxy S22 Ultra", 1299, "Samsung"),
+    new Smartphone("Google Pixel 7 Pro", 899, "Google"),
+    new Smartphone("Xiaomi Mi 12", 799, "Xiaomi"),
+    new Smartphone("Huawei P60 Pro", 999, "Huawei"),
+    new Smartphone("Sony Xperia 5 Mark III", 999, "Sony"),
+    new Smartphone("LG Velvet 3", 699, "LG"),
+    new Smartphone("Motorola Edge 30", 499, "Motorola"),
+    new Smartphone("Nokia X30 Plus", 599, "Nokia"),
+    new Smartphone("ASUS ROG Phone 6", 1299, "ASUS"),
+    new Smartphone("BlackBerry Key3", 699, "BlackBerry"),
+    new Smartphone("Realme GT 3", 499, "Realme"),
+    new Smartphone("Oppo Find X5 Pro", 1099, "Oppo"),
+    new Smartphone("Vivo X90 Pro", 899, "Vivo"),
+    new Smartphone("Lenovo Legion Duel 4", 799, "Lenovo"),
+    new Smartphone("ZTE Axon 40", 599, "ZTE"),
+    new Smartphone("Alcatel 5V+", 399, "Alcatel"),
+    new Smartphone("TCL 30 Pro", 499, "TCL"),
+    new Smartphone("OnePlus 10 Pro", 899, "OnePlus"),
+    new Smartphone("Meizu 20 Pro", 799, "Meizu"),
+    new Smartphone("Poco X5 Pro", 399, "Poco")
+];
 
+const listaNombresProductos = productos.map(producto => producto.constructor.name);
+const listaProductosPorTipo = [
+    productos.filter(producto => producto instanceof Ropa),
+    productos.filter(producto => producto instanceof Hogar),
+    productos.filter(producto => producto instanceof Smartphone)
+];
 
-const zanahoria = new Agricola("zanahoria", 0.50, "Valencia");
-const manzana = new Agricola("manzana", 0.50, "Valencia");
-const cebolla = new Agricola("cebolla", 0.50, "Valencia");
-const pera = new Agricola("pera", 0.50, "Valencia");
-const lechuga = new Agricola("lechuga", 0.50, "Valencia");
-const remolacha = new Agricola("remolacha", 0.50, "Valencia");
-const calabacin = new Agricola("calabacin", 0.50, "Valencia");
-
-const gafas = new Deportivo("gafas de buceo", 12, "España");
-const calzado = new Deportivo("calzado", 12, "España");
-const gorra = new Deportivo("gorra", 12, "España");
-const zapatilla = new Deportivo("zapatilla", 12, "España");
-
-const mesilla = new Muebles("mesilla de noche", 48, "Canada");
-const lampara = new Muebles("lampara de noche", 48, "Canada");
-const escritorio = new Muebles("escritorio", 48, "Canada");
-const sofa = new Muebles("sofa", 48, "Canada");
-
-
-let lista = [];
-lista.push(zanahoria);
-lista.push(manzana);
-lista.push(cebolla);
-lista.push(pera);
-lista.push(lechuga);
-lista.push(remolacha);
-lista.push(calabacin);
-
-lista.push(gafas);
-lista.push(calzado);
-lista.push(gorra);
-lista.push(zapatilla);
-
-lista.push(mesilla);
-lista.push(lampara);
-lista.push(escritorio);
-lista.push(sofa);
-
-
-
-let lista1 = [];
-for (let i = 0; i < lista.length; i++) {
-    lista1.push(lista[i].constructor.tipoProducto());   
-}
-
-let agricolas = [];
-let deportivos = [];
-let muebles = [];
-for (let i = 0; i < lista.length; i++) {
-    if (lista[i] instanceof Agricola) {
-        agricolas.push(lista[i]);
-    } else if (lista[i] instanceof Deportivo) {
-        deportivos.push(lista[i]);
-    } else if (lista[i] instanceof Muebles) {
-        muebles.push(lista[i]);
-    }
-}
-let lista2=[agricolas,deportivos,muebles]
-
-export {lista1, lista2};
+export { listaNombresProductos, listaProductosPorTipo };

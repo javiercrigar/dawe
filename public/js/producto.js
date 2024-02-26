@@ -1,18 +1,23 @@
-export class Producto{
-    constructor(nombre, precio){
-        this.nombre=nombre;
-        this.precio=precio;
+// Producto.js
+export class Producto {
+    constructor(nombre, precio) {
+        this.nombre = nombre;
+        this.precio = precio;
     }
-    getnombre(){
+
+    getNombre() {
         return this.nombre;
     }
-    getprecio(){
+
+    setNombre(nombre) {
+        this.nombre = nombre;
+    }
+
+    getPrecio() {
         return this.precio;
     }
-    setnombre(pnombre){
-        this.nombre=pnombre;
+
+    setPrecio(precio) {
+        this.precio = precio;
     }
-    setprecio(pprecio){
-        this.precio=pprecio;
-    }    
-}    
+}
